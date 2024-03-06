@@ -1,0 +1,14 @@
+org\example\pojo\Result.class
+org\example\mapper\JudgeMapper.class
+org\example\pojo\BGroupScore.class
+org\example\service\impl\JudgeServiceImpl.class
+org\example\pojo\Score.class
+org\example\pojo\AGroupScoreRecord.class
+org\example\controller\JudgeController.class
+org\example\pojo\CGroupScoreRecord.class
+org\example\utils\ThreadLocalUtil.class
+org\example\Configuration\SwaggerConfig.class
+org\example\pojo\Judge.class
+org\example\service\JudgeService.class
+org\example\App.class
+org\example\pojo\Athlete.class
