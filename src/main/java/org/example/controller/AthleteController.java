@@ -16,9 +16,9 @@ public class AthleteController {
     @Autowired
     private AthleteService athleteService;
 
-    @GetMapping("list")
-    public Result<List<Athlete>> list(String competitiveType) {
-        List<Athlete> athleteList = athleteService.list(competitiveType);
+    @GetMapping("/list")
+    public Result<List<Athlete>> list(String competitiveType, String groupValue) {
+        List<Athlete> athleteList = athleteService.list(competitiveType, groupValue);
         return Result.success(athleteList);
 
 
