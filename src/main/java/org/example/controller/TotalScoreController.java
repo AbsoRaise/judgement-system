@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.pojo.Result;
 import org.example.service.TotalScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +30,9 @@ public class TotalScoreController {
     public Result routineCheckDeduction(Integer athleteId, Double scoreValue) {
         totalScoreService.routineCheckDeduction(athleteId, scoreValue);
         return Result.success();
+    }
+    @GetMapping("/get_all_scores")
+    public Result getAllScores(Integer athleteId) {
+        return Result.success(totalScoreService.getAllScores(athleteId));
     }
 }

@@ -1,9 +1,27 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/judgementsystem?&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: 911438
+    dynamic:
+      primary: local #默认数据源
+      strict: false
+      datasource:
+        local:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/judgementsystem?&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+          username: root
+          password: 911438
+        signprj:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://121.40.35.81:3306/signproject?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+          username: root
+          password: adminadminadmin
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/judgementsystem?&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 911438
+
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher

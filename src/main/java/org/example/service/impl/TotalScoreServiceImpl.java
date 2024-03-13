@@ -15,7 +15,7 @@ public class TotalScoreServiceImpl extends ServiceImpl<TotalScoreMapper, Score> 
 
     @Override
     public void create(Integer athleteId) {
-        Score score = new Score(athleteId, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        Score score = new Score(athleteId, 0.0, 0.0, 5.0, 0.0, 3.0, 0.0);
         if (totalScoreMapper.selectOne(Wrappers.<Score>lambdaQuery().eq(Score::getAthleteId, athleteId)) != null) {
             totalScoreMapper.update(score, Wrappers.<Score>lambdaQuery().eq(Score::getAthleteId, athleteId));
         } else {
@@ -39,4 +39,11 @@ public class TotalScoreServiceImpl extends ServiceImpl<TotalScoreMapper, Score> 
         totalScoreMapper.update(updatedScore, Wrappers.<Score>lambdaQuery().eq(Score::getAthleteId, athleteId));
 
     }
+
+    @Override
+    public Score getAllScores(Integer athleteId) {
+
+        return totalScoreMapper.selectOne(Wrappers.<Score>lambdaQuery().eq(Score::getAthleteId, athleteId));
+    }
+
 }
